@@ -1,15 +1,22 @@
-[tool.poetry]
-name = "blank-project"
+[project]
+name = "api"
 version = "0.1.0"
 description = ""
-authors = ["Dmitriy Shikhalev <dmitriy.shikhalev@xmail.ru>"]
-license = "BSD-3"
+authors = [
+    {name = "Dmitriy Shikhalev",email = "dmitriy.shihalev@xmail.ru"}
+]
 readme = "README.md"
+requires-python = ">=3.14"
+license = "BSD-3"
+dependencies = [
+]
 
-[tool.poetry.dependencies]
-python = "^3.13"
+[tool.poetry]
+packages = [{include = "api", from = "api"}]
 
-
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
 pytest-isort = "^4.0.0"
@@ -95,4 +102,3 @@ addopts = "-vvv --mypy --ruff --black --isort --cov=blank_project --no-cov-on-fa
 testpaths = [
     "blank_project", "tests",
 ]
-
